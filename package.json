@@ -9,15 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.2.5",
+    "next": "^14.2.12",
     "portofolio": "file:",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.3.7",
+    "@types/react-dom": "^18.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",

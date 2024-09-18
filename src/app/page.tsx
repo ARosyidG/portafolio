@@ -1,19 +1,91 @@
+import { debug } from "console";
 import Image from "next/image";
-
-
-function Detail(){
-  return (
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni soluta architecto cumque atque. Voluptate esse quos eligendi asperiores odio mollitia quis cupiditate ducimus illo, adipisci labore assumenda unde quasi cumque.
-    </div>
-  );
+interface IProjectList{
+  pojectName:string;
+  about:string;
+  desc:JSX.Element;
 }
-function Lists(){
-  return(
-    <div>
-
+let projects = new Map<string,IProjectList>();
+projects.set(
+  "projectOne",
+  {
+    pojectName:"Project One",
+    about:"This Project Is for Exam",
+    desc: <div>
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quasi numquam illum ipsa optio repellat soluta, voluptates excepturi sunt ratione quas, delectus praesentium reiciendis possimus placeat. Molestias at accusamus voluptate.</h1>
     </div>
-  );
+  }
+);
+projects.set(
+  "projectTwo",
+  {
+    pojectName:"Project Two",
+    about:"This Project Is For My Final Project",
+    desc: <div>
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque error accusantium aliquid illo quas ad, illum rem dolor id sed consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus, molestias fugiat.</h1>
+    </div>
+  }
+);
+projects.set(
+  "projectThree",
+  {
+    pojectName:"Project three",
+    about:"This Project Is For This Web",
+    desc: <div>
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque error accusantium aliquid illo quas ad, illum rem dolor id sed consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus, molestias fugiat.</h1>
+    </div>
+  }
+);
+projects.set(
+  "projectFour",
+  {
+    pojectName:"Project Four",
+    about:"This Project Is For This Testing",
+    desc: <div>
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque error accusantium aliquid illo quas ad, illum rem dolor id sed consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus, molestias fugiat.</h1>
+    </div>
+  }
+);
+projects.set(
+  "projectFive",
+  {
+    pojectName:"Project Five",
+    about:"This Project Is For This Testing 2",
+    desc: <div>
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque error accusantium aliquid illo quas ad, illum rem dolor id sed consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus, molestias fugiat.</h1>
+    </div>
+  }
+);
+function getProjectDesc(projectName:string){
+  return projects.get(projectName)?.desc;
+}
+
+function ProjectListContainer(){
+  const _project = Array.from(projects.keys());
+  return <div id="ProjectListContainer" className="rounded-b-3xl md:rounded-none md:rounded-r-3xl overflow-hidden">
+    {
+      _project.map(project => ProjectList(project))
+    }
+  </div>
+}
+function ProjectList(key:string){
+  return <button className="transition ease-in-out hover:bg-slate-400 border-t border-b-2 w-full">
+    <h1 className="text-xl">{projects.get(key)?.pojectName}</h1>
+    <h2 className="text-xs italic md:text-sm">{projects.get(key)?.about}</h2>
+  </button>
+}
+
+function ProjectDescriptionContainer(){
+  let desc = getProjectDesc("projectOne");
+  return <div id="ProjectDescriptionContainer" className="p-4">
+    {desc}
+  </div>
+}
+
+function ProjectDescription(){
+  return <div>
+
+  </div>
 }
 
 function MainCard(){
@@ -22,17 +94,15 @@ function MainCard(){
         flex flex-col
         bg-slate-800
         shadow-md
-        px-4
-        sm:px-6
-        md:px-8
-        lg:px-10
-        py-8
         rounded-3xl
-        w-full
+        border
+        md:max-h-80
+        md:mx-40
+        overflow-hidden
     ">
-      <div className="grid invisible md:grid-cols-[70%_30%] gap-2 md:visible">
-        <div className="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt consequuntur quisquam molestiae ullam omnis dicta minima quae doloribus nam inventore, officia voluptatibus corporis, numquam sapiente aliquid eos saepe rerum maiores!</div>
-        <div className="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque quidem consectetur accusamus blanditiis, explicabo quas. Neque qui, quas cupiditate fugit blanditiis et vitae, possimus eveniet quia distinctio odit rerum doloribus.</div>
+      <div className="grid md:grid-cols-[70%_30%] md:visible">
+        <ProjectDescriptionContainer></ProjectDescriptionContainer>
+        <ProjectListContainer></ProjectListContainer>
       </div>
     </div>
   );
