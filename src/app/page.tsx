@@ -1,10 +1,12 @@
 import { debug } from "console";
 import Image from "next/image";
+import { useState } from 'react'
 interface IProjectList{
   pojectName:string;
   about:string;
   desc:JSX.Element;
 }
+// let activeProject:IProjectList;
 let projects = new Map<string,IProjectList>();
 projects.set(
   "projectOne",
@@ -61,24 +63,24 @@ function getProjectDesc(projectName:string){
 }
 
 function ProjectListContainer(){
-  const _project = Array.from(projects.keys());
+  const _projects = Array.from(projects.values());
   return <div id="ProjectListContainer" className="rounded-b-3xl md:rounded-none md:rounded-r-3xl overflow-hidden">
     {
-      _project.map(project => ProjectList(project))
+      _projects.map(project => (
+        <ProjectList key={project.pojectName} project={project}></ProjectList>
+      ))
     }
   </div>
 }
-function ProjectList(key:string){
+function ProjectList({project}:{project : IProjectList}){
   return <button className="transition ease-in-out hover:bg-slate-400 border-t border-b-2 w-full">
-    <h1 className="text-xl">{projects.get(key)?.pojectName}</h1>
-    <h2 className="text-xs italic md:text-sm">{projects.get(key)?.about}</h2>
+    <h1 className="text-xl">{project.pojectName}</h1>
+    <h2 className="text-xs italic lg:text-sm">{project.about}</h2>
   </button>
 }
 
 function ProjectDescriptionContainer(){
-  let desc = getProjectDesc("projectOne");
   return <div id="ProjectDescriptionContainer" className="p-4">
-    {desc}
   </div>
 }
 
@@ -89,6 +91,7 @@ function ProjectDescription(){
 }
 
 function MainCard(){
+  // const [project,setProject] = useState<IProjectList>(Array.from(projects.values())[0]);
   return(
     <div className="
         flex flex-col
@@ -115,3 +118,4 @@ export default function Home() {
     </main>
   );
 }
+
