@@ -66,7 +66,7 @@ function getProjectDesc(projectName: string) {
 }
 export function ProjectListContainer({activeProject, setProject} : {activeProject:IProjectList, setProject: (project: IProjectList) => void}) {
   const _projects = Array.from(projects.values());
-  return <div id="ProjectListContainer" className="rounded-b-3xl md:rounded-none md:rounded-r-3xl overflow-hidden no-scrollbar overflow-scroll h-full">
+  return <div id="ProjectListContainer" className="rounded-b-3xl md:rounded-none md:rounded-r-3xl overflow-hidden no-scrollbar overflow-scroll md:max-h-80">
     {_projects.map(project => (
       <ProjectList key={project.pojectName} project={project} activeProject={activeProject} setProject={setProject}></ProjectList>
     ))}
@@ -79,8 +79,12 @@ function ProjectList({ project, activeProject, setProject }: { project: IProject
   </button>;
 }
 export function ProjectDescriptionContainer({project}:{project: IProjectList}) {
-  return <div id="ProjectDescriptionContainer" className="p-4 bg-slate-600 no-scrollbar overflow-scroll h-full">
-    <ProjectDescription project={project}></ProjectDescription>
+  return <div id="ProjectDescriptionContainer" className="p-4 bg-slate-600 md:max-h-80">
+    <div className="no-scrollbar overflow-scroll h-full">
+      <div className="bg-slate-600">
+        <ProjectDescription project={project}></ProjectDescription>
+      </div>
+    </div>
   </div>;
 }
 function ProjectDescription({project}:{project: IProjectList}) {

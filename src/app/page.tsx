@@ -16,6 +16,7 @@ export default function Home() {
           rounded-3xl
           border
           overflow-hidden
+          h-100
           md:max-h-80
         ">
           <MainCard></MainCard>
