@@ -16,10 +16,10 @@ export default function Navbar({theShownPage,setPage}:{theShownPage:string, setP
         Profile
       </button>
       <button
-        onClick={() => setPage("Project")}
-        className={`${theShownPage=="Project"? "text-slate-800 bg-slate-400 font-bold md:w-32":"md:w-24"} transition-all duration-300 flex-1 md:text-sm border px-4 py-1`}
+        onClick={() => setPage("Projects")}
+        className={`${theShownPage=="Projects"? "text-slate-800 bg-slate-400 font-bold md:w-32":"md:w-24"} transition-all duration-300 flex-1 md:text-sm border px-4 py-1`}
       >
-        Project
+        Projects
       </button>
       <button
         onClick={() => setPage("Button")}
