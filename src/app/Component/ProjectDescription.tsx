@@ -1,4 +1,4 @@
-import { IProjectList } from "./Projects";
+import { IProjectList } from "./ProjectData";
 
 export function ProjectDescriptionContainer({
     project,
