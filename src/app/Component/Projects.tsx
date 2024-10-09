@@ -18,7 +18,6 @@ export default function ProjectsContainer() {
     overflow-hidden
     border
     md:max-h-96
-    md:min-w-full
     transition-all
     duration-150
   ">
