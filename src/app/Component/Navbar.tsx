@@ -10,12 +10,6 @@ export default function Navbar({content,setContent}:{content:string, setContent:
         About
       </button>
       <button
-        onClick={() => setContent("Profile")}
-        className={`${content=="Profile"? "text-slate-800 bg-slate-400 font-bold md:w-36":"md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 md:text-sm border px-4 py-1`}
-      >
-        Profile
-      </button>
-      <button
         onClick={() => setContent("Projects")}
         className={`${content=="Projects"? "text-slate-800 bg-slate-400 font-bold md:w-36":"md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 md:text-sm border px-4 py-1`}
       >

@@ -3,7 +3,7 @@ import { Content } from "./Content";
 import { useEffect, useState } from "react";
 import Navbar from "./Component/Navbar";
 export default function Home() {
-  const [activeContent, setContent] = useState<string>("Projects");
+  const [activeContent, setContent] = useState<string>("About");
   const [header, setHeader] = useState<string>(activeContent);
   const [contentShown, setContentShown] = useState<React.ReactNode>(<Content activeContent={activeContent} />) 
   const [isContentChanged, setIsContentChanged] = useState<boolean>(false);
@@ -19,7 +19,7 @@ export default function Home() {
   }, [activeContent]);
   return (
     <main className="min-h-screen flex flex-col items-center text-white bg-gradient-to-bl from-slate-900 via-slate-950 to-slate-800 px-6">
-      <div className="md:inset-x-10 lg:inset-x-20 xl:inset-x-40 p-4 absolute">
+      <div className="md:inset-x-10 lg:inset-x-20 xl:inset-x-40 p-4 md:absolute">
         <div className="text-start my-6 md:mx-10">
           <div className={
             `transition-all duration-150 ${isContentChanged ? "-translate-y-6 opacity-0" : "-translate-y-0 opacity-100"}`
