@@ -13,7 +13,7 @@ export default function Home() {
       setHeader(activeContent);
       setContentShown(<Content activeContent={activeContent} />);
       setIsContentChanged(false);
-    }, 300); // Match this duration with the CSS transition duration
+    }, 300); 
 
     return () => clearTimeout(timeout);
   }, [activeContent]);
@@ -34,7 +34,7 @@ export default function Home() {
           <Navbar content={activeContent} setContent={setContent} />
         </div>
         <div className={
-          `transition-all duration-300 ${isContentChanged ? "w-0" : "w-full"}`
+          `overflow-hidden transition-all duration-300 ${isContentChanged ? "w-0" : "w-full"}`
         }>
           {contentShown}
         </div>
