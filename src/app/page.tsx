@@ -22,7 +22,7 @@ export default function Home() {
       <div className="md:inset-x-10 lg:inset-x-20 xl:inset-x-40 p-4 md:absolute">
         <div className="text-start my-6 md:mx-10">
           <div className={
-            `transition-all duration-150 ${isContentChanged ? "-translate-y-6 opacity-0" : "-translate-y-0 opacity-100"}`
+            `transition-all duration-150 ${isContentChanged ? "-translate-y-6 blur-sm opacity-0" : "-translate-y-0 blur-0 opacity-100"}`
           }>
             <h1 className="text-l lg:text-2xl">Ganausi&apos;s</h1>
             <div
@@ -34,7 +34,7 @@ export default function Home() {
           <Navbar content={activeContent} setContent={setContent} />
         </div>
         <div className={
-          `overflow-hidden transition-all duration-300 ${isContentChanged ? "w-0" : "w-full"}`
+          `overflow-hidden transition-all duration-300 ${isContentChanged ? "w-0" : " w-full"}`
         }>
           {contentShown}
         </div>

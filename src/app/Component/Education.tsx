@@ -1,6 +1,6 @@
 export default function EducationContainer() {
     return (
-        <div className="px-10 py-2 md:max-h-96 overflow-hidden border-l">
+        <div className="px-10 py-2 md:max-h-96 overflow-hidden border-x">
             <div className="table-auto">
                 <tr>
                     <td className="pb-2 align-bottom">
