@@ -27,7 +27,7 @@ export function ProjectDescriptionContainer({
           {project.githubLink && (
             <>
               {' | '}
-              <a className="text-slate-200 font-bold" href={project.githubLink}>Github Link</a>
+              <a target="_blank" className="text-slate-200 font-bold" href={project.githubLink}>Github Link</a>
             </>
           )}
         </h2>
