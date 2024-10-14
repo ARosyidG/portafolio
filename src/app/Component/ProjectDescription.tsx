@@ -22,8 +22,16 @@ export function ProjectDescriptionContainer({
     return (
       <div>
         <h1 className="text-2xl md:text-4xl">{project.pojectName}</h1>
-        <h2 className="text-slate-400 text-xs italic">{project.about}</h2>
-        <div className="border-slate-500 border-b mb-2"></div>
+        <h2 className="text-slate-400 text-xs italic">
+          {project.about}
+          {project.githubLink && (
+            <>
+              {' | '}
+              <a className="text-slate-200 font-bold" href={project.githubLink}>Github Link</a>
+            </>
+          )}
+        </h2>
+        <div className="border-slate-500 border-b mb-4"></div>
         {project.desc}
       </div>
     );

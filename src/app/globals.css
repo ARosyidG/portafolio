@@ -45,6 +45,9 @@ body {
     scrollbar-width: none;
   }
 }
+p{
+  margin-bottom: 1rem;
+}
  /* custom scrollbar */
 /* ::-webkit-scrollbar {
   width: 5px;
