@@ -3,12 +3,12 @@ import Image from "next/image";
 export default function AboutContainer() {
     return(
         <div className="grid md:grid-cols-[75%_25%] text-nowrap">
-            <div className="px-10 py-2 md:max-h-96 text-clip overflow-hidden md:border-l border-t md:border-t-0">
-                <div className="my-4 flex items-center">
+            <div className="px-10 py-2 text-center md:text-left md:max-h-96 text-clip overflow-hidden md:border-l border-t md:border-t-0">
+                <div className="my-4 flex flex-wrap md:flex-nowrap border md:border-0 p-10 md:p-0 border-slate-700 justify-center md:justify-normal items-center">
                     <div className="rounded-full overflow-hidden h-20 w-20">
                         <Image src="/Me.jpg" alt="Me" width={100} height={100}></Image>
                     </div>
-                    <div className="ml-4">
+                    <div className="md:ml-4">
                         <div className="text-2xl">AHMAD ROSYID GANAUSI</div>
                         <div className="text-sm italic text-slate-500">Unemployed Programmer</div>
                     </div>
