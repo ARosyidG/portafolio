@@ -1,7 +1,7 @@
 "use client";
 import { Content } from "./Content";
 import { useEffect, useState } from "react";
-import Navbar from "./Component/Navbar";
+import Navbar from "../Component/Navbar";
 export default function Home() {
   const [activeContent, setContent] = useState<string>("About");
   const [header, setHeader] = useState<string>(activeContent);

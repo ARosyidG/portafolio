@@ -1,8 +1,8 @@
-import AboutContainer from "./Component/About";
-import EducationContainer from "./Component/Education";
-import ExperienceContainer from "./Component/Experience";
-import ProfileContainer from "./Component/Profile";
-import ProjectsContainer from "./Component/Projects";
+import AboutContainer from "../Component/About";
+import EducationContainer from "../Component/Education";
+import ExperienceContainer from "../Component/Experience";
+import ProfileContainer from "../Component/Profile";
+import ProjectsContainer from "../Component/Projects";
 
 export function Content({ activeContent }: { activeContent: string }) {
   switch (activeContent) {
