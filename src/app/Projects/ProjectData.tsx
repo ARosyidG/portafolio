@@ -16,7 +16,7 @@ export interface IProjectList {
         <p className="text-justify">
           This project aims to simulate skeletal anatomy learning at Mataram University. The application developed from this project is based on Virtual Reality.
         </p>
-        <Image src="/Project/TA.png" alt="TA" width={1000} height={100}></Image>
+        <Image className="mx-4" src="/Project/TA.png" alt="TA" width={1000} height={100}></Image>
         <p className="text-justify">
         All 3D assets in this project is created by me except The bone and VR Controller model. The bone model used in this project is the pelvic bone model obtained from Z-Anatomy. This highly detailed model provides an accurate representation of human anatomy, which is essential for effective learning. The application’s content features modified transformations of the bone model, allowing students to explore and observe the pelvic bone from all angles. This interactive experience enhances their understanding of the structure and function of the bone, making learning more engaging and immersive. Additionally, the application includes quizzes designed to assess students&apos; ability to recognize and identify different parts of the pelvic bone. These quizzes not only reinforce their knowledge but also provide immediate feedback, helping students track their progress and understanding of skeletal anatomy. Through this innovative approach, the application aims to improve the educational experience for students at Mataram University.
         </p>
@@ -26,20 +26,39 @@ export interface IProjectList {
       </div>
     ),
   });
-  projects.set("LearningAnatomyV2", {
-    pojectName: "Learning Anatomy V2",
-    about: "Coming Soon",
+  
+  projects.set("PanjatPinang", {
+    pojectName: "Panjat Pinang",
+    about: "Game to Celebrate Indonesian Independence Day",
     desc: (
       <div>
         <h1>
-          I Can&apos;t Reveal it Now because of legal reason.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque
+          error accusantium aliquid illo quas ad, illum rem dolor id sed
+          consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus,
+          molestias fugiat.
         </h1>
       </div>
     ),
   });
-  projects.set("PanjatPinang", {
-    pojectName: "Panjat Pinang",
-    about: "Game to Celebrate Indonesian Independence Day",
+ 
+  projects.set("yair", {
+    pojectName: "Yair",
+    about: "Organization e-signature and e-letter app.",
+    desc: (
+      <div>
+        <h1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque
+          error accusantium aliquid illo quas ad, illum rem dolor id sed
+          consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus,
+          molestias fugiat.
+        </h1>
+      </div>
+    ),
+  });
+  projects.set("GroupTaskSync", {
+    pojectName: "Group Task Sync",
+    about: "App to synchronize task list.",
     desc: (
       <div>
         <h1>
@@ -94,30 +113,13 @@ export interface IProjectList {
       </div>
     ),
   });
-  projects.set("GroupTaskSync", {
-    pojectName: "Group Task Sync",
-    about: "App to synchronize task list.",
+  projects.set("LearningAnatomyV2", {
+    pojectName: "Learning Anatomy V2",
+    about: "Coming Soon",
     desc: (
       <div>
         <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque
-          error accusantium aliquid illo quas ad, illum rem dolor id sed
-          consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus,
-          molestias fugiat.
-        </h1>
-      </div>
-    ),
-  });
-  projects.set("yair", {
-    pojectName: "Yair",
-    about: "Organization e-signature and e-letter app.",
-    desc: (
-      <div>
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque
-          error accusantium aliquid illo quas ad, illum rem dolor id sed
-          consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus,
-          molestias fugiat.
+          I Can&apos;t Reveal it Now because of legal reason.
         </h1>
       </div>
     ),

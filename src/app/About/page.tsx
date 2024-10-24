@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export default function AboutContainer() {
-    return(
+    return (
         <div className="grid md:grid-cols-[75%_25%] text-nowrap">
             <div className="px-10 py-2 text-center md:text-left md:max-h-96 text-clip overflow-hidden md:border-l border-t md:border-t-0">
                 <div className="my-4 flex flex-wrap md:flex-nowrap border md:border-0 p-10 md:p-0 border-slate-700 justify-center md:justify-normal items-center">
@@ -20,6 +20,18 @@ export default function AboutContainer() {
                     <p>I like RPG games.</p>
                     <br />
                     <p>I love learning things.</p>
+                    <div className="flex justify-center items-center md:justify-start md:items-start">
+                        <div className="w-fit h-fit mx-2 rounded-xl overflow-hidden">
+                            <a href="https://github.com/ARosyidG" target="_blank">
+                                <Image src="/github-Logo.jpg" width={30} height={30} alt="github account"></Image>
+                            </a>
+                        </div>
+                        <div className="w-fit h-fit mx-2 rounded-xl overflow-hidden">
+                            <a href="https://www.instagram.com/ganausi/" target="_blank">
+                                <Image src="/instagram-Logo.jpg" width={30} height={30} alt="github account"></Image>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="p-2 md:max-h-96 text-clip overflow-hidden md:border-l border-t md:border-t-0">

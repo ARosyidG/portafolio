@@ -1,36 +1,50 @@
 "use client";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation'
 
-export function Navbar() {
+export function Navbar({ setTransitionStart, setHeader }: {
+  setTransitionStart: React.Dispatch<React.SetStateAction<boolean>>;
+  setHeader: React.Dispatch<React.SetStateAction<string>>;
+}) {
   const pathname = usePathname();
+  const router = useRouter();
+  const handleLinkClick = (href: string) => {
+    console.log('Performing some logic before navigation to:', href);
+    setTransitionStart(true);
+    const timeout = setTimeout(() => {
+      setHeader(href)
+      setTransitionStart(false);
+      router.push(href);
+    }, 300);
+    return () => clearTimeout(timeout);
+  };
   return (
     <div id="navbar" className="flex lg:block my-4 w-full p-px">
-      <Link
-        href="/About"
+      <button
+        onClick={() => handleLinkClick("/About")}
         className={`${pathname === "/About" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 md:text-sm border rounded-l-full px-4 py-1 inline-block text-center`}
       >
         About
-      </Link>
-      <Link
-        href="/Projects"
+      </button>
+      <button
+        onClick={() => handleLinkClick("/Projects")}
         className={`${pathname === "/Projects" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 md:text-sm border px-4 py-1 inline-block text-center`}
       >
         Projects
-      </Link>
-      <Link
-        href="/Experience"
+      </button>
+      <button
+        onClick={() => handleLinkClick("/Experience")}
         className={`${pathname === "/Experience" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 md:text-sm border px-4 py-1 inline-block text-center`}
       >
         Experience
-      </Link>
-      <Link
-        href="/Education"
+      </button>
+      <button
+        onClick={() => handleLinkClick("/Education")}
         className={`${pathname === "/Education" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 md:text-sm border rounded-r-full px-4 py-1 inline-block text-center`}
       >
         Education
-      </Link>
+      </button>
     </div>
   );
 }
@@ -42,15 +56,7 @@ export default function Header({
 }>) {
   const pathname = usePathname();
   const [isTransitionStart, setTransitionStart] = useState<boolean>(false)
-  const [header, setHeader] = useState<string>("")
-  useEffect(() => {
-    setTransitionStart(true);
-    const timeout = setTimeout(() => {
-      setHeader(pathname)
-      setTransitionStart(false);
-    }, 300);
-    return () => clearTimeout(timeout);
-  }, [pathname])
+  const [header, setHeader] = useState<string>("/About")
   return (
     <main className="min-h-screen flex flex-col items-center text-white bg-gradient-to-bl from-slate-900 via-slate-950 to-slate-800 px-6">
       <div className="md:inset-x-10 lg:inset-x-20 xl:inset-x-40 p-4 md:absolute">
@@ -65,7 +71,7 @@ export default function Header({
               {header}
             </div>
           </div>
-          <Navbar />
+          <Navbar setTransitionStart={setTransitionStart} setHeader={setHeader} />
         </div>
         <div className={
           `overflow-hidden transition-all duration-300 ${isTransitionStart ? "w-0" : " w-full"}`
