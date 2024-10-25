@@ -18,11 +18,11 @@ export default function ProjectsContainer() {
     rounded-3xl
     overflow-hidden
     border
-    md:max-h-96
+    md:max-h-[90vh]
     transition-all
     duration-150
   ">
-      <div className="grid md:grid-cols-[75%_25%] lg:grid-cols-[70%_30%] md:max-h-96">
+      <div className="grid md:grid-cols-[75%_25%] lg:grid-cols-[70%_30%] md:max-h-[96vh]">
         <ProjectDescriptionContainer
           project={activeProject}
         ></ProjectDescriptionContainer>

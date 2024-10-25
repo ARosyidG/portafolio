@@ -43,7 +43,7 @@ export interface IProjectList {
   });
  
   projects.set("yair", {
-    pojectName: "Yair",
+    pojectName: "E-Letter",
     about: "Organization e-signature and e-letter app.",
     desc: (
       <div>

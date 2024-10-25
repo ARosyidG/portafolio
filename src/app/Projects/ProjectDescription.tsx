@@ -8,7 +8,7 @@ export function ProjectDescriptionContainer({
     return (
       <div
         id="ProjectDescriptionContainer"
-        className="p-4 px-10 text-sm bg-slate-600 md:max-h-96 relative"
+        className="p-4 px-10 text-sm bg-slate-600 md:max-h-[60vh] relative"
       >
         <div className="absolute h-6 right-0 left-0 bg-gradient-to-b from-slate-600"></div>
         <div className="py-4 pr-1 pb-12 no-scrollbar overflow-scroll h-full">
