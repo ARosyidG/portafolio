@@ -15,7 +15,7 @@ export function ProjectListContainer({
     >
       {_projects.map((project) => (
         <ProjectList
-          key={project.pojectName}
+          key={project.projectName}
           project={project}
           activeProject={activeProject}
           setProject={setProject}
@@ -33,7 +33,7 @@ function ProjectList({
   activeProject: IProjectList;
   setProject: (project: IProjectList) => void;
 }) {
-  const _isActive: boolean = project.pojectName === activeProject.pojectName;
+  const _isActive: boolean = project.projectName === activeProject.projectName;
   return (
     <button
       onClick={() => setProject(project)}
@@ -41,7 +41,7 @@ function ProjectList({
         _isActive ? "bg-gradient-to-r from-slate-600" : ""
       } border-slate-700 transition ease-in-out duration-300 hover:delay-0 delay-150 hover:bg-slate-700 p-1 border-y-2 w-full max-h-14 overflow-hidden`}
     >
-      <h1 className="text-xl truncate">{project.pojectName}</h1>
+      <h1 className="text-xl truncate">{project.projectName}</h1>
       <h2
         className={
           (_isActive ? "md:block" : "md:hidden") +

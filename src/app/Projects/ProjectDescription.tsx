@@ -21,7 +21,7 @@ export function ProjectDescriptionContainer({
   function ProjectDescription({ project }: { project: IProjectList }) {
     return (
       <div>
-        <h1 className="text-2xl md:text-4xl">{project.pojectName}</h1>
+        <h1 className="text-2xl md:text-4xl">{project.projectName}</h1>
         <h2 className="text-slate-400 text-xs italic">
           {project.about}
           {project.githubLink && (

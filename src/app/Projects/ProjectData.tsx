@@ -1,6 +1,6 @@
 import Image from "next/image";
 export interface IProjectList {
-    pojectName: string;
+    projectName: string;
     about: string;
     githubLink?: string;
     desc: React.ReactNode;
@@ -8,7 +8,7 @@ export interface IProjectList {
   // let activeProject:IProjectList;
   export let projects = new Map<string, IProjectList>();
   projects.set("LearningAnatomy", {
-    pojectName: "Learning Anatomy",
+    projectName: "Learning Anatomy",
     about: "This is my final project in University",
     githubLink : "https://github.com/ARosyidG/Learning-Anatomy",
     desc: (
@@ -16,10 +16,11 @@ export interface IProjectList {
         <p className="text-justify">
           This project aims to simulate skeletal anatomy learning at Mataram University. The application developed from this project is based on Virtual Reality.
         </p>
-        <Image className="mx-4" src="/Project/TA.png" alt="TA" width={1000} height={100}></Image>
+        <Image className="px-4 py-1" src="/Project/TA.png" alt="TA" width={1000} height={100}></Image>
         <p className="text-justify">
         All 3D assets in this project is created by me except The bone and VR Controller model. The bone model used in this project is the pelvic bone model obtained from Z-Anatomy. This highly detailed model provides an accurate representation of human anatomy, which is essential for effective learning. The application’s content features modified transformations of the bone model, allowing students to explore and observe the pelvic bone from all angles. This interactive experience enhances their understanding of the structure and function of the bone, making learning more engaging and immersive. Additionally, the application includes quizzes designed to assess students&apos; ability to recognize and identify different parts of the pelvic bone. These quizzes not only reinforce their knowledge but also provide immediate feedback, helping students track their progress and understanding of skeletal anatomy. Through this innovative approach, the application aims to improve the educational experience for students at Mataram University.
         </p>
+        <Image className="px-4 py-1" src="/Project/TA2.png" alt="TA" width={1000} height={100}></Image>
         <p className="text-justify">
         In its development, I used the XRI Package provided by Unity. This package was utilized solely to obtain input from the Oculus Quest 2, and I did not use the Grab Interactable component that it offers. The limitations of this component hindered the realization of the design requested by the university. As a result, I recreated the functionalities for grabbing, rotating, and scaling to align with the university&apos;s desired design.
         </p>
@@ -28,7 +29,7 @@ export interface IProjectList {
   });
   
   projects.set("PanjatPinang", {
-    pojectName: "Panjat Pinang",
+    projectName: "Panjat Pinang",
     about: "Game to Celebrate Indonesian Independence Day",
     desc: (
       <div>
@@ -43,7 +44,7 @@ export interface IProjectList {
   });
  
   projects.set("yair", {
-    pojectName: "E-Letter",
+    projectName: "E-Letter",
     about: "Organization e-signature and e-letter app.",
     desc: (
       <div>
@@ -57,7 +58,7 @@ export interface IProjectList {
     ),
   });
   projects.set("GroupTaskSync", {
-    pojectName: "Group Task Sync",
+    projectName: "Group Task Sync",
     about: "App to synchronize task list.",
     desc: (
       <div>
@@ -71,7 +72,7 @@ export interface IProjectList {
     ),
   });
   projects.set("ship", {
-    pojectName: "Project Ship",
+    projectName: "Project Ship",
     about: "Coming soon-game i made with my friend",
     desc: (
       <div>
@@ -114,7 +115,7 @@ export interface IProjectList {
     ),
   });
   projects.set("LearningAnatomyV2", {
-    pojectName: "Learning Anatomy V2",
+    projectName: "Learning Anatomy V2",
     about: "Coming Soon",
     desc: (
       <div>
