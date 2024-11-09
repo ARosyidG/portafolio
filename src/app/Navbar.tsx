@@ -7,11 +7,12 @@ export function Navbar({ setTransitionStart, setHeader }: {
   setTransitionStart: React.Dispatch<React.SetStateAction<boolean>>;
   setHeader: React.Dispatch<React.SetStateAction<string>>;
 }) {
-  const pathname = usePathname();
+  const [pathname, setPathName] = useState(usePathname());
   const router = useRouter();
   const handleLinkClick = (href: string) => {
     console.log('Performing some logic before navigation to:', href);
     setTransitionStart(true);
+    setPathName(href);
     const timeout = setTimeout(() => {
       setHeader(href)
       setTransitionStart(false);
@@ -56,7 +57,7 @@ export default function Header({
 }>) {
   const pathname = usePathname();
   const [isTransitionStart, setTransitionStart] = useState<boolean>(false)
-  const [header, setHeader] = useState<string>("/About")
+  const [header, setHeader] = useState<string>(pathname)
   return (
     <main className="min-h-screen flex flex-col items-center text-white bg-gradient-to-bl from-slate-900 via-slate-950 to-slate-800 px-6">
       <div className="md:inset-x-10 lg:inset-x-20 xl:inset-x-40 p-4 md:absolute">

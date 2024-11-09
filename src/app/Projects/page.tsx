@@ -17,7 +17,6 @@ export default function ProjectsContainer() {
     shadow-md
     rounded-3xl
     overflow-hidden
-    border
     md:max-h-[90vh]
     transition-all
     duration-150

@@ -7,23 +7,29 @@ export function ProjectListContainer({
   activeProject: IProjectList;
   setProject: (project: IProjectList) => void;
 }) {
-  const _projects = Array.from(projects.values());
+  const projectList = Array.from(projects.values());
+
   return (
     <div
       id="ProjectListContainer"
-      className="rounded-b-3xl md:rounded-none md:rounded-r-3xl no-scrollbar overflow-scroll md:max-h-96"
+      className="
+        no-scrollbar overflow-scroll
+        rounded-b-3xl md:rounded-none md:rounded-r-3xl
+        bg-gradient-to-r from-slate-900 via-slate-800
+      "
     >
-      {_projects.map((project) => (
+      {projectList.map((project) => (
         <ProjectList
           key={project.projectName}
           project={project}
           activeProject={activeProject}
           setProject={setProject}
-        ></ProjectList>
+        />
       ))}
     </div>
   );
 }
+
 function ProjectList({
   project,
   activeProject,
@@ -33,20 +39,25 @@ function ProjectList({
   activeProject: IProjectList;
   setProject: (project: IProjectList) => void;
 }) {
-  const _isActive: boolean = project.projectName === activeProject.projectName;
+  const isActive = project.projectName === activeProject.projectName;
+
   return (
     <button
       onClick={() => setProject(project)}
-      className={`${
-        _isActive ? "bg-gradient-to-r from-slate-600" : ""
-      } border-slate-700 transition ease-in-out duration-300 hover:delay-0 delay-150 hover:bg-slate-700 p-1 border-y-2 w-full max-h-14 overflow-hidden`}
+      className={`
+        ${isActive ? "bg-gradient-to-r from-slate-600" : "bg-gradient-to-r from-slate-900 via-slate-800"}
+        w-full max-h-14 p-1 overflow-hidden
+        border-y-2 border-slate-700
+        transition duration-300 ease-in-out delay-150
+        hover:bg-slate-700 hover:delay-0
+      `}
     >
       <h1 className="text-xl truncate">{project.projectName}</h1>
       <h2
-        className={
-          (_isActive ? "md:block" : "md:hidden") +
-          " text-xs italic truncate lg:block"
-        }
+        className={`
+          text-xs italic truncate
+          ${isActive ? "md:block" : "md:hidden"} lg:block
+        `}
       >
         {project.about}
       </h2>
