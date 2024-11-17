@@ -33,12 +33,17 @@ export interface IProjectList {
     about: "Game to Celebrate Indonesian Independence Day",
     desc: (
       <div>
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque
-          error accusantium aliquid illo quas ad, illum rem dolor id sed
-          consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus,
-          molestias fugiat.
-        </h1>
+        <p className="text-justify">
+          One of my Unity-based game inspired by Panjat Pinang, a traditional Indonesian activity celebrated during Indonesia's Independence Day. in the game participants climb a slippery pole and claim prizes. I developed this project to not only commemorate the national holiday but also to showcase the potential of integrating cultural heritage with interactive digital experiences.
+        </p>
+        <Image className="px-4 py-1" src="/Project/PanjatPinang.png" alt="TA" width={1000} height={100}></Image>
+        <p className="text-justify">
+          The game was built using the Unity game engine. The gameplay interface features a menu where players can set up the event. Users can input rewards, define the height of the pole (Tinggi Tiang), and manage participants (Peserta) through a UI. Players are listed dynamically, and the system ensures that all information is processed smoothly. The animated characters climbing the pole reflect the fun and teamwork typical of the real-life event.
+        </p>
+
+        <p className="text-justify">
+          To manage the backend, I developed a REST API using Spring Boot, which connects the game to a relational database. The database stores player login info, participants names and the rewards they earned during the game.
+        </p>
       </div>
     ),
   });
