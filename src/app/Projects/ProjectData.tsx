@@ -44,6 +44,12 @@ export interface IProjectList {
         <p className="text-justify">
           To manage the backend, I developed a REST API using Spring Boot, which connects the game to a relational database. The database stores player login info, participants names and the rewards they earned during the game.
         </p>
+        <span>link for demo: </span>
+        <a href="https://17an.ganausi.com" target="_blank">https://17an.ganausi.com</a>
+        <p>
+          <br />
+          <br />
+        </p>
       </div>
     ),
   });
@@ -53,12 +59,21 @@ export interface IProjectList {
     about: "Organization e-signature and e-letter app.",
     desc: (
       <div>
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque
-          error accusantium aliquid illo quas ad, illum rem dolor id sed
-          consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus,
-          molestias fugiat.
-        </h1>
+        <p>
+          This project is designed to streamline the management of correspondence within an organization. Its primary goal is to enable members of the organization to create and sign documents from anywhere, ensuring that all processes related to correspondence can be handled swiftly and efficiently.
+        </p>
+        <p>
+          The project is built using the Laravel framework
+        </p>
+        <Image className="px-4 py-1" src="/Project/EL1.png" alt="EL" width={1000} height={100}></Image>
+        <Image className="px-4 py-1" src="/Project/EL2.png" alt="EL" width={1000} height={100}></Image>
+        <Image className="px-4 py-1" src="/Project/EL3.png" alt="EL" width={1000} height={100}></Image>
+        <span>link for demo: </span>
+        <a href="https://yair.ganausi.com" target="_blank">https://yair.ganausi.com</a>
+        <p>
+          <br />
+          <br />
+        </p>
       </div>
     ),
   });
@@ -68,10 +83,7 @@ export interface IProjectList {
     desc: (
       <div>
         <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque
-          error accusantium aliquid illo quas ad, illum rem dolor id sed
-          consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus,
-          molestias fugiat.
+          Just random project to learn java.net
         </h1>
       </div>
     ),
