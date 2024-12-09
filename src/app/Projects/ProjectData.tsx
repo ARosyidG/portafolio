@@ -84,6 +84,7 @@ export interface IProjectList {
       <div>
         <h1>
           Just random project to learn java.net
+          <Image className="px-4 py-1" src="/Project/JN.png" alt="JN" width={1000} height={100}></Image>
         </h1>
       </div>
     ),
