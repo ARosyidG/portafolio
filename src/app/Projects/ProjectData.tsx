@@ -31,6 +31,7 @@ export interface IProjectList {
   projects.set("PanjatPinang", {
     projectName: "Panjat Pinang",
     about: "Game to Celebrate Indonesian Independence Day",
+    githubLink:"https://github.com/ARosyidG/Panjat-Pinang",
     desc: (
       <div>
         <p className="text-justify">
@@ -57,6 +58,7 @@ export interface IProjectList {
   projects.set("yair", {
     projectName: "E-Letter",
     about: "Organization e-signature and e-letter app.",
+    githubLink:"https://github.com/ARosyidG/yair",
     desc: (
       <div>
         <p>
@@ -80,6 +82,7 @@ export interface IProjectList {
   projects.set("GroupTaskSync", {
     projectName: "Group Task Sync",
     about: "App to synchronize task list.",
+    githubLink:"https://github.com/ARosyidG/Java.net-GroupTaskSync",
     desc: (
       <div>
         <h1>
