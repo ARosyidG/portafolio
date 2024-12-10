@@ -3,12 +3,11 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation'
 
-export function Navbar({ setTransitionStart, setHeader, pathname, setPathName }: {
+export function Navbar({ setTransitionStart, setHeader }: {
   setTransitionStart: React.Dispatch<React.SetStateAction<boolean>>;
   setHeader: React.Dispatch<React.SetStateAction<string>>;
-  pathname:string;
-  setPathName: React.Dispatch<React.SetStateAction<string>>;
 }) {
+  const [pathname, setPathName] = useState(usePathname());
   const router = useRouter();
   const handleLinkClick = (href: string) => {
     console.log('Performing some logic before navigation to:', href);
@@ -17,7 +16,7 @@ export function Navbar({ setTransitionStart, setHeader, pathname, setPathName }:
     const timeout = setTimeout(() => {
       router.push(href);
     }, 300);
-    setHeader(href)
+    setHeader(href);
     return () => clearTimeout(timeout);
   };
   return (
@@ -55,12 +54,14 @@ export default function Header({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [pathname, setPathName] = useState(usePathname());
+  const pathname = usePathname();
   const [isTransitionStart, setTransitionStart] = useState<boolean>(false)
   const [header, setHeader] = useState<string>(pathname);
   useEffect(()=>{
-    setTransitionStart(false);
-  },[pathname]);
+    if(document.readyState === 'complete'){
+      setTransitionStart(false);
+    }
+  },[]);
   return (
     <main className="min-h-screen flex flex-col items-center text-white bg-gradient-to-bl from-slate-900 via-slate-950 to-slate-800 px-6">
       <div className="md:inset-x-10 lg:inset-x-20 xl:inset-x-40 p-4 md:absolute">
@@ -75,7 +76,7 @@ export default function Header({
               {header}
             </div>
           </div>
-          <Navbar setTransitionStart={setTransitionStart} setHeader={setHeader} setPathName={setPathName} pathname={pathname} />
+          <Navbar setTransitionStart={setTransitionStart} setHeader={setHeader} />
         </div>
         <div className={
           `overflow-hidden transition-all duration-300 ${isTransitionStart ? "w-0" : " w-full"}`
