@@ -55,41 +55,66 @@ export default function Header({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const [isTransitionStart, setTransitionStart] = useState<boolean>(false)
+  const [isTransitionStart, setTransitionStart] = useState<boolean>(false);
   const [header, setHeader] = useState<string>(pathname);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
   useEffect(() => {
-    const onPageLoad = () => {
-      setTransitionStart(false);
+    const handleLoad = () => {
+      setIsLoading(false);
+      setTransitionStart(false); // Reset transition
     };
-    if (document.readyState === 'complete') {
-      onPageLoad();
-    } else {
-      window.addEventListener('load', onPageLoad, false);
-      return () => window.removeEventListener('load', onPageLoad);
-    }
-  }, []);
+
+    // Simulate checking for dynamic content load
+    const observer = new MutationObserver(() => {
+      // Check if content is fully rendered (e.g., children or other indicators)
+      const contentLoaded = document.querySelector("#content")?.children.length;
+      if (contentLoaded) {
+        observer.disconnect(); // Stop observing once loaded
+        handleLoad();
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect(); // Cleanup observer
+  }, [pathname]);
+
   return (
     <main className="min-h-screen flex flex-col items-center text-white bg-gradient-to-bl from-slate-900 via-slate-950 to-slate-800 px-6">
       <div className="md:inset-x-10 lg:inset-x-20 xl:inset-x-40 p-4 md:absolute">
         <div className="text-start my-6 md:mx-10">
-          <div className={
-            `transition-all duration-150 ${isTransitionStart ? "-translate-y-6 blur-sm opacity-0" : "-translate-y-0 blur-0 opacity-100"}`
-          }>
+          <div
+            className={`transition-all duration-150 ${
+              isTransitionStart ? "-translate-y-6 blur-sm opacity-0" : "-translate-y-0 blur-0 opacity-100"
+            }`}
+          >
             <h1 className="text-l lg:text-2xl">Ganausi&apos;s</h1>
             <div
-              className={`text-4xl lg:text-6xl transition-all duration-150 ${isTransitionStart ? "-translate-y-6 opacity-0" : "-translate-y-0 opacity-100"}`}
+              className={`text-4xl lg:text-6xl transition-all duration-150 ${
+                isTransitionStart ? "-translate-y-6 opacity-0" : "-translate-y-0 opacity-100"
+              }`}
             >
               {header}
             </div>
           </div>
           <Navbar setTransitionStart={setTransitionStart} setHeader={setHeader} />
         </div>
-        <div className={
-          `overflow-hidden transition-all duration-300 ${isTransitionStart ? "w-0" : " w-full"}`
-        }>
-          {children}
+        <div
+          id="content"
+          className={`overflow-hidden transition-all duration-300 ${
+            isTransitionStart ? "w-0" : "w-full"
+          }`}
+        >
+          {isLoading ? (
+            <div className="text-center py-10">
+              <p>Loading...</p>
+            </div>
+          ) : (
+            children
+          )}
         </div>
       </div>
     </main>
-  )
+  );
 }
