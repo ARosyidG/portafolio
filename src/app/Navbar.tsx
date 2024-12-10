@@ -57,11 +57,17 @@ export default function Header({
   const pathname = usePathname();
   const [isTransitionStart, setTransitionStart] = useState<boolean>(false)
   const [header, setHeader] = useState<string>(pathname);
-  useEffect(()=>{
-    if(document.readyState === 'complete'){
+  useEffect(() => {
+    const onPageLoad = () => {
       setTransitionStart(false);
+    };
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad, false);
+      return () => window.removeEventListener('load', onPageLoad);
     }
-  },[]);
+  }, []);
   return (
     <main className="min-h-screen flex flex-col items-center text-white bg-gradient-to-bl from-slate-900 via-slate-950 to-slate-800 px-6">
       <div className="md:inset-x-10 lg:inset-x-20 xl:inset-x-40 p-4 md:absolute">
