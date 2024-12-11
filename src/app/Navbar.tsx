@@ -11,6 +11,9 @@ export function Navbar({ setTransitionStart, setHeader, setIsLoading }: {
   const [pathname, setPathName] = useState(usePathname());
   const router = useRouter();
   const handleLinkClick = (href: string) => {
+    if (href === pathname) {
+      return;
+    }
     console.log('Performing some logic before navigation to:', href);
     setTransitionStart(true);
     setPathName(href);
