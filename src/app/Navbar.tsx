@@ -95,7 +95,7 @@ export default function Header({
         <div className="flex">
           <div
             id="content"
-            className={`overflow-hidden transition-all duration-300 ${
+            className={`overflow-hidden transition-all duration-300 z-10 ${
               isTransitionStart ? "w-0" : "w-full"
             }`}
           >
