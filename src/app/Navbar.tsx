@@ -10,6 +10,11 @@ export function Navbar({ setTransitionStart, setHeader, setIsLoading }: {
 }) {
   const [pathname, setPathName] = useState(usePathname());
   const router = useRouter();
+  useEffect(()=>{
+    if(pathname === "/"){
+      handleLinkClick("/About");
+    }
+  },[pathname]);
   const handleLinkClick = (href: string) => {
     if (href === pathname) {
       return;
@@ -63,7 +68,6 @@ export default function Header({
   const [isTransitionStart, setTransitionStart] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [header, setHeader] = useState<string>(pathname);
-
   useEffect(()=>{
     setTransitionStart(false);
     setIsLoading(false);
