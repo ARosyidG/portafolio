@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from 'next/navigation'
 
 export function Navbar({ setTransitionStart, setHeader }: {
@@ -57,29 +57,9 @@ export default function Header({
   const pathname = usePathname();
   const [isTransitionStart, setTransitionStart] = useState<boolean>(false);
   const [header, setHeader] = useState<string>(pathname);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    const handleLoad = () => {
-      setIsLoading(false);
-      setTransitionStart(false); // Reset transition
-    };
-
-    // Simulate checking for dynamic content load
-    const observer = new MutationObserver(() => {
-      // Check if content is fully rendered (e.g., children or other indicators)
-      const contentLoaded = document.querySelector("#content")?.children.length;
-      if (contentLoaded) {
-        observer.disconnect(); // Stop observing once loaded
-        handleLoad();
-      }
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    return () => observer.disconnect(); // Cleanup observer
-  }, [pathname]);
-
+  useEffect(()=>{
+    setTransitionStart(false);
+  },[pathname]);
   return (
     <main className="min-h-screen flex flex-col items-center text-white bg-gradient-to-bl from-slate-900 via-slate-950 to-slate-800 px-6">
       <div className="md:inset-x-10 lg:inset-x-20 xl:inset-x-40 p-4 md:absolute">
@@ -106,13 +86,7 @@ export default function Header({
             isTransitionStart ? "w-0" : "w-full"
           }`}
         >
-          {isLoading ? (
-            <div className="text-center py-10">
-              <p>Loading...</p>
-            </div>
-          ) : (
-            children
-          )}
+          {children}
         </div>
       </div>
     </main>
