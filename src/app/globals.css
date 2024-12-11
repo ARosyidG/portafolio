@@ -68,3 +68,28 @@ p{
 ::-webkit-scrollbar-corner{
   display: none;
 } */
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: fit-content;
+  font-size: 40px;
+  font-family: system-ui,sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0000;
+  -webkit-text-stroke: 1px #ffffff;
+  --l:#8b8b8b00 45%,#ffffff 0 55%,#ffffff00 0;
+  --g:0/300% 100% no-repeat text;
+  background: 
+    linear-gradient(-60deg,var(--l)) var(--g),
+    linear-gradient( 60deg,var(--l)) var(--g);
+  animation: l7 4s linear infinite;
+}
+.loader:before {
+  content: "Loading";
+}
+@keyframes l7 {
+  0%  {background-position: 100%,0   }
+  50% {background-position: 0   ,0   }
+  to  {background-position: 0   ,100%}
+}

@@ -3,8 +3,9 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from 'next/navigation'
 
-export function Navbar({ setTransitionStart, setHeader }: {
+export function Navbar({ setTransitionStart, setHeader, setIsLoading }: {
   setTransitionStart: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   setHeader: React.Dispatch<React.SetStateAction<string>>;
 }) {
   const [pathname, setPathName] = useState(usePathname());
@@ -14,6 +15,7 @@ export function Navbar({ setTransitionStart, setHeader }: {
     setTransitionStart(true);
     setPathName(href);
     const timeout = setTimeout(() => {
+      setIsLoading(true);
       router.push(href);
     }, 300);
     setHeader(href);
@@ -56,9 +58,12 @@ export default function Header({
 }>) {
   const pathname = usePathname();
   const [isTransitionStart, setTransitionStart] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [header, setHeader] = useState<string>(pathname);
+
   useEffect(()=>{
     setTransitionStart(false);
+    setIsLoading(false);
   },[pathname]);
   return (
     <main className="min-h-screen flex flex-col items-center text-white bg-gradient-to-bl from-slate-900 via-slate-950 to-slate-800 px-6">
@@ -78,15 +83,20 @@ export default function Header({
               {header}
             </div>
           </div>
-          <Navbar setTransitionStart={setTransitionStart} setHeader={setHeader} />
+          <Navbar setTransitionStart={setTransitionStart} setHeader={setHeader} setIsLoading={setIsLoading}/>
         </div>
-        <div
-          id="content"
-          className={`overflow-hidden transition-all duration-300 ${
-            isTransitionStart ? "w-0" : "w-full"
-          }`}
-        >
-          {children}
+        <div className="flex">
+          <div
+            id="content"
+            className={`overflow-hidden transition-all duration-300 ${
+              isTransitionStart ? "w-0" : "w-full"
+            }`}
+          >
+            {children}
+          </div>
+          <div className={`transition-all flex w-full items-center justify-center absolute ${isLoading ? "translate-y-0 blur-0 opacity-100" : "translate-y-10 blur-sm opacity-0"}`}>
+            <div className="loader"></div>
+          </div>
         </div>
       </div>
     </main>
