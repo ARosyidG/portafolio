@@ -72,6 +72,9 @@ export interface IProjectList {
         <Image className="px-4 py-1" src="/Project/EL3.png" alt="EL" width={1000} height={100}></Image>
         <span>link for demo: </span>
         <a href="https://yair.ganausi.com" target="_blank">https://yair.ganausi.com</a>
+        <p>User 1 : </p>
+        <p>username : ganausi</p>
+        <p>password : 12345678</p>
         <p>
           <br />
           <br />
