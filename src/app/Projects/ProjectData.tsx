@@ -100,41 +100,7 @@ export interface IProjectList {
     about: "Coming soon-game i made with my friend",
     desc: (
       <div>
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima neque
-          error accusantium aliquid illo quas ad, illum rem dolor id sed
-          consequuntur voluptatibus officiis, voluptatem voluptate qui. Minus,
-          molestias fugiat.
-        </h1>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-          magnam pariatur minus cupiditate eos autem modi consequatur eius tenetur
-          quis eveniet omnis laudantium enim voluptatem inventore id ipsa,
-          quibusdam nam.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam porro
-          saepe, dolore tenetur laudantium dolorem doloremque, aliquam rerum atque
-          rem adipisci eos illum iure corporis, magni est unde similique facilis?
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit,
-          consectetur asperiores commodi at odit corrupti? Quos exercitationem
-          atque corporis quis, mollitia vel, blanditiis et facilis architecto
-          officiis sed vitae ratione.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio itaque
-          dolore illum, magni voluptates, nesciunt distinctio, saepe deleniti hic
-          beatae a iure ratione incidunt similique? Eligendi ipsum exercitationem
-          ex accusantium!
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
-          dolorem ut fugiat tenetur aperiam libero mollitia corrupti. Tempora nemo
-          veniam non quo quibusdam minima! Quis explicabo tenetur quaerat odit
-          eligendi.
-        </p>
+        <p>COMING SOON</p>
       </div>
     ),
   });
