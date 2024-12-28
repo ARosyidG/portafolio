@@ -20,7 +20,6 @@ export default function AboutContainer() {
                     <p>I like RPG games.</p>
                     <br />
                     <p>Language: Indonesia, English, little bit of japanese</p>
-                    <br />
                     <p>I love learning things.</p>
                     <div className="flex justify-center items-center md:justify-start md:items-start">
                         <div className="w-fit h-fit mx-2 rounded-xl overflow-hidden">
