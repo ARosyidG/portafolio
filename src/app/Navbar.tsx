@@ -30,28 +30,28 @@ export function Navbar({ setTransitionStart, setHeader, setIsLoading }: {
     return () => clearTimeout(timeout);
   };
   return (
-    <div id="navbar" className="flex lg:block my-4 w-full p-px">
+    <div id="navbar" className="grid grid-cols-2 gap-1 sms:gap-0 sms:flex lg:block my-4 w-full p-px">
       <button
         onClick={() => handleLinkClick("/About")}
-        className={`${pathname === "/About" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 md:text-sm border rounded-l-full px-4 py-1 inline-block text-center`}
+        className={`${pathname === "/About" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 text-xs md:text-sm border sms:rounded-l-full px-4 py-1 inline-block text-center`}
       >
         About
       </button>
       <button
         onClick={() => handleLinkClick("/Projects")}
-        className={`${pathname === "/Projects" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 md:text-sm border px-4 py-1 inline-block text-center`}
+        className={`${pathname === "/Projects" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 text-xs md:text-sm border px-4 py-1 inline-block text-center`}
       >
         Projects
       </button>
       <button
         onClick={() => handleLinkClick("/Experience")}
-        className={`${pathname === "/Experience" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 md:text-sm border px-4 py-1 inline-block text-center`}
+        className={`${pathname === "/Experience" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 text-xs md:text-sm border px-4 py-1 inline-block text-center`}
       >
         Experience
       </button>
       <button
         onClick={() => handleLinkClick("/Education")}
-        className={`${pathname === "/Education" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 md:text-sm border rounded-r-full px-4 py-1 inline-block text-center`}
+        className={`${pathname === "/Education" ? "text-slate-800 bg-slate-400 font-bold md:w-40" : "md:w-28 hover:bg-slate-800"} transition-all duration-300 flex-1 text-xs md:text-sm border sms:rounded-r-full px-4 py-1 inline-block text-center`}
       >
         Education
       </button>
@@ -73,8 +73,8 @@ export default function Header({
     setIsLoading(false);
   },[pathname]);
   return (
-    <main className="min-h-screen flex flex-col items-center text-white bg-gradient-to-bl from-slate-900 via-slate-950 to-slate-800 px-6">
-      <div className="md:inset-x-10 lg:inset-x-20 xl:inset-x-40 p-4 md:absolute">
+    <main className="min-h-screen w-full flex flex-col items-center text-white bg-gradient-to-bl from-slate-900 via-slate-950 to-slate-800 px-4 md:px-[10vh]">
+      <div className="w-full relative">
         <div className="text-start my-6 md:mx-10">
           <div
             className={`transition-all duration-150 ${
