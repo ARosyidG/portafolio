@@ -34,7 +34,7 @@ export default function AboutContainer() {
                         </div>
                         <div className="w-fit h-fit mx-2 rounded-xl overflow-hidden">
                             <a href="https://www.youtube.com/@ganausi1194" target="_blank">
-                                <Image src="./youtube-Logo.png" width={30} height={30} alt="Youtube account"></Image>
+                                <Image src="/youtube-Logo.png" width={30} height={30} alt="Youtube account"></Image>
                             </a>
                         </div>
                     </div>
