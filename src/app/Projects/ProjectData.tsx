@@ -95,15 +95,15 @@ export interface IProjectList {
       </div>
     ),
   });
-  projects.set("ship", {
-    projectName: "Project Ship",
-    about: "Coming soon-game i made with my friend",
-    desc: (
-      <div>
-        <p>COMING SOON</p>
-      </div>
-    ),
-  });
+  // projects.set("ship", {
+  //   projectName: "Project Ship",
+  //   about: "Coming soon-game i made with my friend",
+  //   desc: (
+  //     <div>
+  //       <p>COMING SOON</p>
+  //     </div>
+  //   ),
+  // });
   projects.set("LearningAnatomyV2", {
     projectName: "Learning Anatomy V2",
     about: "Coming Soon",
