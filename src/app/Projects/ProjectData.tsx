@@ -126,7 +126,7 @@ export interface IProjectList {
           <li>This array is then matched against the patterns stored in the dictionary to find a corresponding model/mesh ID and, optionally, its rotation.</li>
           <li>The selected model/mesh is assigned to the tile in the grid.</li>
         </u>
-        <p>This method is inspired by the Wave Function Collapse algorithm, where each tile in the grid is assigned a model based on its neighboring tiles' configurations. The algorithm scans the neighbors (horizontal, vertical, and diagonal) and generates an array representing the neighbors' relationships. It then looks up this array in a dictionary to find the corresponding model and any necessary rotations, assigning the model to the tile in the grid. This process ensures that each tile follows specific adjacency rules, similar to how the WFC algorithm enforces constraints in its tile selection.</p>
+        <p>This method is inspired by the Wave Function Collapse algorithm, where each tile in the grid is assigned a model based on its neighboring tiles configurations. The algorithm scans the neighbors (horizontal, vertical, and diagonal) and generates an array representing the neighbors relationships. It then looks up this array in a dictionary to find the corresponding model and any necessary rotations, assigning the model to the tile in the grid. This process ensures that each tile follows specific adjacency rules, similar to how the WFC algorithm enforces constraints in its tile selection.</p>
         <Image className="px-4 py-1" src="https://ganausi.com/image/wfcscreenshoot.png" alt="WFC" width={1000} height={100}></Image>
       </div>
     ),
