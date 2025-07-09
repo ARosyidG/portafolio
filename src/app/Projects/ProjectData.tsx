@@ -135,9 +135,9 @@ export interface IProjectList {
     about: "Coming Soon",
     desc: (
       <div>
-        <h1>
+{/*         <h1>
           I Can&apos;t Reveal it Now because of legal reason.
-        </h1>
+        </h1> */}
       </div>
     ),
   });
