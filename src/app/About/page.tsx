@@ -44,7 +44,7 @@ export default function AboutContainer() {
                 <div className="text-l mb-4">
                     Technology That I&apos;ve Use:
                 </div>
-                <div className="grid grid-cols-3 gap-1 grid-rows-3 aspect-[1/1]" style="max-height: 300px;">
+                <div className="grid grid-cols-3 gap-1 grid-rows-3 aspect-[1/1] max-h-[300px]">
                     <div className="flex justify-center items-center col-span-2 bg-slate-50 p-1">
                         <Image src="/UnityLogo.png" width={200} height={200} alt="Unity"></Image>
                     </div>
