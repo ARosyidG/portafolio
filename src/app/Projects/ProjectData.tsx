@@ -35,7 +35,7 @@ export interface IProjectList {
     desc: (
       <div>
         <p className="text-justify">
-          One of my Unity-based game inspired by Panjat Pinang and <a href="https://www.online-stopwatch.com/duck-race/">Duck Race</a>. Panjat Pinang is a traditional Indonesian activity celebrated during Indonesia&apos;s Independence Day. in the game participants climb a slippery pole and claim prizes. I developed this project to not only commemorate the national holiday but also to showcase the potential of integrating cultural heritage with interactive digital experiences.
+          One of my Unity-based game inspired by Panjat Pinang and <a href="https://www.online-stopwatch.com/duck-race/" style="color:blue">Duck Race</a>. Panjat Pinang is a traditional Indonesian activity celebrated during Indonesia&apos;s Independence Day. in the game participants climb a slippery pole and claim prizes. I developed this project to not only commemorate the national holiday but also to showcase the potential of integrating cultural heritage with interactive digital experiences.
         </p>
         <Image className="px-4 py-1" src="/Project/PanjatPinang.png" alt="TA" width={1000} height={100}></Image>
         <p className="text-justify">
